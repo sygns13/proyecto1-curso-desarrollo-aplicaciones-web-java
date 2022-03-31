@@ -1,0 +1,22 @@
+/* div {
+    width: 80%;
+} */
+
+
+/* .container {
+    border: 1px solid gray;
+} */
+
+/* #container-id2{
+    margin-top: 20px;
+} */
+
+.card{
+    margin-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#formulario-productos{
+    display: none;
+}

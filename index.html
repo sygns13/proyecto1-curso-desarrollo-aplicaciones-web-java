@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo de mi Aplicacion</title>
+    <!-- <style>
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+    </style> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+   <!--  Ejemplo 01 -->
+    <!-- <div class="container">
+        <div class="row">
+                <h1>Hola Mundo</h1>
+        </div>
+    </div>
+
+    <div class="container" id="container-id2">
+        <h2>Segundo container</h2>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <header class="p-3 bg-dark text-white">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Navbar Ejemplo">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">LOGO</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarEjemplo" aria-controls="navbarEjemplo" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarEjemplo">
+                            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Opcion 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Opcion Deshabilitada</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="comboboxEjemplo" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dropdown link
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="comboboxEjemplo">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Opcion 1</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Opcion 2</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Opcion 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <form>
+                                <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="card">
+                <div class="card-header">
+                    Mantenimiento de Productos
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Opciones</h5>
+
+                    <button type="button" class="btn btn-primary" id="btnNuevoRegistro" onclick="nuevoProducto()">Nuevo Producto</button>
+                    <button type="button" class="btn btn-success" id="btnOpcion2">Otra Opción</button>
+                </div>
+            </div>
+
+
+            <div class="card border-primary" id="formulario-productos">
+                <div class="card-header text-white bg-primary">
+                    Formulario de Registro de Productos
+                </div>
+                <div class="card-body">
+                    
+                    <div class="mb-3 row">
+                        <label for="txtProducto" class="col-sm-2 col-form-label">Producto</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtProducto" placeholder="Ingrese el nombre del producto">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="txtPrecioCompra" class="col-sm-2 col-form-label">Precio de Compra</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtPrecioCompra" placeholder="Ingrese el precio de compra unitario del producto">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="txtPrecioVenta" class="col-sm-2 col-form-label">Precio de Venta</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtPrecioVenta" placeholder="Ingrese el precio de venta unitario del producto">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="txtCantidad" class="col-sm-2 col-form-label">Cantidad</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtCantidad" placeholder="Ingrese la cantidad de unidades del producto">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                    <button type="button" class="btn btn-warning" id="btnCancelar">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btnCerrar">Cerrar</button>
+                </div>
+            </div>
+
+
+            <div class="card border-success">
+                <div class="card-header text-white bg-success">
+                    Productos Registrados
+                </div>
+                <div class="card-body">
+                    
+
+                    <div class="table-content">
+
+                        <table class="table table-dark table-striped table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Precio de Compra</th>
+                                    <th scope="col">Precio de Venta</th>
+                                    <th scope="col">Utilidad Unitaria</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Utilidad Total</th>
+                                    <th scope="col">Gestion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-productos">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Producto 1</td>
+                                    <td>5</td>
+                                    <td>15</td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>50</td>
+                                    <td><button type="button" class="btn btn-danger">Borrar</button> </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Producto 2</td>
+                                    <td>5</td>
+                                    <td>15</td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>50</td>
+                                    <td><button type="button" class="btn btn-danger">Borrar</button> </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Producto 3</td>
+                                    <td>5</td>
+                                    <td>15</td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>50</td>
+                                    <td><button type="button" class="btn btn-danger">Borrar</button> </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script src="clases.js" text="text/javascript"></script>
+    <script src="main.js" text="text/javascript"></script>
+    
+</body>
+</html>
